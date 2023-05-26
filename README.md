@@ -1,5 +1,7 @@
 # Seedyboard
 
+**Proyecto realizado para TFG**
+
 **RESUMEN**
 
 La Seedyboard es una estructura diseñada específicamente para la práctica de la escalada en 
@@ -34,6 +36,29 @@ The user interface is intuitive and easy to use. Climbers can select the desired
 screen or control panel, and the Seedyboard will illuminate the corresponding holds to follow 
 the selected route. Climbers can make repeated attempts on the same route to improve their 
 performance and surpass their own limits. 
+
+**RESUMEN DEL CONTENIDO DE LA APLICACIÓN WEB**
+
+• Login/Register.
+• Creación de rutas.
+• Enviar rutas a Arduino.
+• Conexión a Arduino.
+• Minijuegos.
+• Control de usuarios (CRUD).
+• Control de rutas (CRUD).
+
+**FOTOS DE LA INTERFAZ**
+
+INICIO
+
+![image](https://github.com/Alvaroguillen09/Seedyboard/assets/98521199/0d50335f-c48c-49dd-ad0b-86cbc33c37ed)
+MI PERFIL
+
+![image](https://github.com/Alvaroguillen09/Seedyboard/assets/98521199/f9579c49-c621-42a8-b348-72d79c0480b8)
+
+**BASE DE DATOS**
+
+![MicrosoftTeams-image (23)](https://github.com/Alvaroguillen09/Seedyboard/assets/98521199/68a7fe1f-5c34-4e5f-9e66-82726cb933a2)
 
 **ANEXO**
 
@@ -73,5 +98,3 @@ demostrando el proceso de prototipado y experimentación inicial llevado a cabo 
 funcionamiento deseado de la cadena de LEDs.
 
 ![image](https://github.com/Alvaroguillen09/Seedyboard/assets/98521199/b1177020-6f49-41af-b1f9-3ae265a555d4)
-
-
