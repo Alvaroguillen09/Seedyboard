@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: yellow;
+  }
+  
+  /* Estilos para la tabla */
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 auto;
+    max-width: 70%;
+    background-color: #fffacc;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+  
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: none;
+  }
+  
+  th {
+    background-color: rgb(241, 209, 24);
+    font-weight: bold;
+  }
+  
+  /* Estilos para los bordes redondeados */
+  table thead th:first-child,
+  table thead th:last-child,
+  table tbody tr:first-child td:first-child,
+  table tbody tr:first-child td:last-child {
+    position: relative;
+  }
+  
+  table thead th:first-child::before,
+  table thead th:last-child::before,
+  table tbody tr:first-child td:first-child::before,
+  table tbody tr:first-child td:last-child::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: black;
+  }
+  
+  table thead th:first-child::before,
+  table tbody tr:first-child td:first-child::before {
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+  }
+  
+  table thead th:last-child::before,
+  table tbody tr:first-child td:last-child::before {
+    top: -1px;
+    bottom: -1px;
+    right: -1px;
+  }
+  
+ 
+  button {
+      display: block;
+      margin: 0 auto;
+      background-color: rgb(33, 40, 43);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+  }
+  
+  button:hover {
+      background-color: #0069d9;
+  }
+
+  
+  
+  .volver-atras {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #f1f1f1;
+      color: #333;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .volver-atras:hover {
+      background-color: #ddd;
+    }
+    
+    .volver-atras:focus {
+      outline: none;
+    }
+  
+    p{
+      text-align: center;
+    }
+  
+    .profile-icon {
+      display: flex;
+      justify-content: center;
+      align-items: right;
+      width: 150px; /* Ajusta este valor según tus necesidades */
+      height: 150px; /* Ajusta este valor según tus necesidades */
+      border: 2px solid black;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      
+    }
+    .profile-icon i {
+      font-size: 80px; /* Ajusta este valor según tus necesidades */
+    
+    }
+    h2{
+      text-align: center;
+    }
+    h3{
+      text-align: center;
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      max-width: 50%;
+      margin: 0 auto;
+    }
+    
+    .button-container button {
+      flex-basis: 48%; /* Ajusta el valor según tus necesidades */
+    }
+    /* Estilos para los enlaces */
+  a {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #999;
+  }
+
+  .prof-icon {
+
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    overflow: hidden;
+    margin: 0 auto;
+
+
+  }
+  
+    

@@ -1,0 +1,15 @@
+body{
+  background-color: yellow;
+}
+.wrapper{ 
+    width: 500px; 
+    padding: 20px; 
+  }
+  .wrapper h2 {text-align: center}
+  .wrapper form .form-group span {color: red;}
+
+   /* Estilos para la imagen */
+   img {
+    border-radius: 10%; /* Radio de borde del 50% para redondear la imagen */
+
+  }

@@ -1,0 +1,91 @@
+body {
+    flex-direction: column;
+    background-color: yellow; /* Cambia el color de fondo según tus preferencias */
+    font-family: Arial, sans-serif; /* Cambia el tipo de letra del cuerpo del documento */
+}
+
+.game-container {
+    text-align: center;
+    border: 3px solid rgb(33, 40, 43); /* Agrega un borde sólido de 3px en negro */
+    border-radius: 10px; /* Hace que los bordes sean redondeados */
+    padding: 10px; /* Agrega un espacio interno al contenedor */
+    background-color: rgb(241, 209, 24);
+    max-width: 800px;
+    margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000; /* Cambia el color del texto según tus preferencias */
+}
+
+.game-description {
+    font-size: 16px;
+    color: #000000; /* Cambia el color del texto según tus preferencias */
+    text-align: left;
+}
+.game-description2 {
+    font-size: 16px;
+    color: #000000; /* Cambia el color del texto según tus preferencias */
+    text-align: center;
+}
+
+.button-container {
+    margin-top: 10px;
+}
+
+.button { 
+  background-color: rgb(33, 40, 43);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0069d9;
+}
+
+.volver-atras {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.volver-atras:hover {
+    background-color: #ddd;
+}
+
+.volver-atras:focus {
+    outline: none;
+}
+
+p {
+    text-align: center;
+    font-weight: Arial, sans-serif;
+    font-size: 17px;
+  }
+
+
+.game-container img {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 25%;
+    height: auto;
+}
+h1{
+    text-align: center;
+    
+}

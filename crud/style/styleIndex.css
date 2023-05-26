@@ -1,0 +1,121 @@
+/* Estilos para el cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: yellow;
+  }
+  
+  /* Estilos para la cabecera */
+  header {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Estilos para los enlaces */
+  a {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #999;
+  }
+  
+ /* Estilos para la tabla */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto;
+  max-width: 70%;
+  background-color: #fffacc;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: none;
+}
+
+th {
+  background-color: rgb(241, 209, 24);
+  font-weight: bold;
+}
+
+/* Estilos para los bordes redondeados */
+table thead th:first-child,
+table thead th:last-child,
+table tbody tr:first-child td:first-child,
+table tbody tr:first-child td:last-child {
+  position: relative;
+}
+
+table thead th:first-child::before,
+table thead th:last-child::before,
+table tbody tr:first-child td:first-child::before,
+table tbody tr:first-child td:last-child::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: black;
+}
+
+table thead th:first-child::before,
+table tbody tr:first-child td:first-child::before {
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+}
+
+table thead th:last-child::before,
+table tbody tr:first-child td:last-child::before {
+  top: -1px;
+  bottom: -1px;
+  right: -1px;
+}
+
+  /* Estilos para los botones */
+  button, input[type="submit"] {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover, input[type="submit"]:hover {
+    background-color: #ffdd33;
+  }
+  
+  h2{
+    text-align: center;
+    color: #333;
+  }
+
+  .volver-atras {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .volver-atras:hover {
+    background-color: #ddd;
+  }
+  
+  .volver-atras:focus {
+    outline: none;
+  }
+  

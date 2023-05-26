@@ -1,0 +1,58 @@
+body {
+  background-color: yellow;
+  font-family: "Arial Sans", Arial, sans-serif;
+ 
+}
+
+form {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  background-color:  rgb(241, 209, 24);
+  max-width: 400px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center; /* Centramos el título */
+}
+
+.volver-atras {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.volver-atras:hover {
+  background-color: #ddd;
+}
+
+.volver-atras:focus {
+  outline: none;
+}
+input[type="submit"] {
+  display: block; 
+  background-color: rgb(33, 40, 43);
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 auto;
+  
+}
+
+input[type="submit"]:hover {
+  background-color: #0069d9;
+}

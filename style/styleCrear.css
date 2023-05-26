@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: yellow;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Estilos para los círculos */
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #FF0000;
+}
+
+.circle:first-child {
+  background-color: green;
+}
+
+.circle:not(:first-child):not(:last-child) {
+  background-color: yellow;
+}
+
+/* Estilos para el formulario */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+input[type="submit"] {
+  display: block; 
+  background-color: rgb(33, 40, 43);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  
+}
+
+input[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+/* Estilos para el resultado */
+#resultado {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #F0F0F0;
+}
+
+.volver-atras {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.volver-atras:hover {
+  background-color: #ddd;
+}
+
+.volver-atras:focus {
+  outline: none;
+}
+
+.contenedor-imagen {
+  margin-right: 60px;
+}
+
+p {
+  text-align: center;
+  font-weight: Arial, sans-serif;
+  font-size: 17px;
+}
+
+select#dificultad {
+  border: 2px solid black;
+
+}
+h1{
+  text-align: center;
+}
