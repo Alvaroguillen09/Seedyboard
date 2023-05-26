@@ -52,6 +52,7 @@ performance and surpass their own limits.
 INICIO
 
 ![image](https://github.com/Alvaroguillen09/Seedyboard/assets/98521199/0d50335f-c48c-49dd-ad0b-86cbc33c37ed)
+
 MI PERFIL
 
 ![image](https://github.com/Alvaroguillen09/Seedyboard/assets/98521199/f9579c49-c621-42a8-b348-72d79c0480b8)
