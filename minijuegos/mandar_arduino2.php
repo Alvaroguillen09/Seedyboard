@@ -21,7 +21,7 @@ fwrite($puerto_serial, $minijuego);
 fclose($puerto_serial);
 
 // Redirigir al usuario a la página de confirmación
-header("Location: confirmacion2.php");
+header("Location: minijuegos.php");
 
 $_SESSION['valor'] = $minijuego;
 exit();

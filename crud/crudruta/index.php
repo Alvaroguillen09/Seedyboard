@@ -44,28 +44,56 @@ if (mysqli_num_rows($resultado) > 0) {
     echo "<tr><td colspan='6'><a href='crearruta.php?user_id=" . $_SESSION['id'] . "'>Crear una nueva ruta</a></td></tr>";
     echo "<tr><th>ID</th><th>Nombre</th><th>Leds</th><th>Dificultad</th><th>Descripcion</th><th>IdUsuario</th><th>Acciones</th></tr>";
     while ($fila1 = mysqli_fetch_assoc($resultado)) {
-        // Definimos el número de filas y columnas
+      // Definimos el número de filas y columnas
       $numFilas = 12;
-      $numColumnas = 8;
-      $ledsArray = explode(", ", $fila1['leds']); // Convertimos la cadena a un arreglo
-    
-      $combinaciones = '';
+$numColumnas = 8;
+$ledsArray = explode(", ", $fila1['leds']); // Convertimos la cadena a un arreglo
 
-        for ($fila = 0; $fila < $numFilas; $fila++) {
-          for ($columna = 0; $columna < $numColumnas; $columna++) {
-            $indice = $fila * $numColumnas + $columna;
-            if (isset($ledsArray[$indice]) && $ledsArray[$indice] == 255) {
-              $letra = chr(65 + $columna);
-              $numero = $fila + 1;
-              $combinaciones .= $letra . $numero . " ";
-            }
-          }
-        }
+$combinaciones = array();
+
+for ($fila = 0; $fila < $numFilas; $fila++) {
+  for ($columna = 0; $columna < $numColumnas; $columna++) {
+    $indice = ($columna * $numFilas) + $fila;
+    if (isset($ledsArray[$indice]) && $ledsArray[$indice] == 255) {
+      $letra = chr(65 + $columna);
+      $numero = $fila + 1;
+
+      // Verificar si la columna es par para invertir la numeración de la fila
+      if ($columna % 2 == 1) {
+        $numero = $numFilas - $fila;
+      }
+
+      $combinaciones[] = $letra . $numero;
+    }
+  }
+}
+
+// Ordenar alfabéticamente y luego numéricamente
+sort($combinaciones);
+usort($combinaciones, function($a, $b) {
+  $letraA = substr($a, 0, 1);
+  $letraB = substr($b, 0, 1);
+  $numeroA = substr($a, 1);
+  $numeroB = substr($b, 1);
+
+  if ($letraA == $letraB) {
+    return $numeroA - $numeroB;
+  } else {
+    return strcmp($letraA, $letraB);
+  }
+});
+
 
         echo "<tr>";
         echo "<td>" . $fila1['id'] . "</td>";
         echo "<td>" . $fila1['nombre'] . "</td>";
-        echo "<td>" . $combinaciones . "</td>";
+        echo "<td>";
+        // Mostrar los elementos del array $combinaciones
+   foreach ($combinaciones as $combinacion) {
+     echo $combinacion . " ";
+   }
+ 
+   echo "</td>";
         echo "<td>" . $fila1['dificultad'] . "</td>";
         echo "<td>" . $fila1['descripcion'] . "</td>";
         echo "<td>" . $fila1['user_id'] . "</td>";

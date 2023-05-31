@@ -61,104 +61,125 @@ void loop() {
     }
 
     if (first255Index != -1 && last255Index != -1) {
-      strip.setPixelColor(first255Index, strip.Color(0, 255, 0)); // Primer 255 en verde
-      strip.setPixelColor(last255Index, strip.Color(255, 0, 0)); // Último 255 en rojo
+      strip.setPixelColor(first255Index, strip.Color(255, 0, 0)); // Primer 255 en verde
+      strip.setPixelColor(last255Index, strip.Color(0, 255, 0)); // Último 255 en rojo
     }
 
     strip.show(); // Actualiza el estado de los LEDs
 
     // Verifica si el valor recibido es igual a 103
-    if (data.toInt() == 103) {
-      // Enciende todos los LEDs con el mismo color
-      strip.fill(strip.Color(255, 255, 255), 0, NUM_LEDS);
-      strip.show(); // Actualiza el estado de los LEDs
+if (data.toInt() == 103) {
+  // Reinicia la variable stopRandomLEDs a false
+  stopRandomLEDs = false;
 
-      // Apaga un LED aleatorio cada 5 segundos
-      int numLedsOn = NUM_LEDS; // Número de LEDs encendidos inicialmente
+  // Enciende todos los LEDs con el mismo color
+  strip.fill(strip.Color(255, 255, 255), 0, NUM_LEDS);
+  strip.show(); // Actualiza el estado de los LEDs
 
-      while (numLedsOn > 0 && !stopRandomLEDs) {
-        unsigned long currentMillis = millis();
+  // Apaga un LED aleatorio cada 5 segundos
+  int numLedsOn = NUM_LEDS; // Número de LEDs encendidos inicialmente
 
-        if (currentMillis - previousMillis >= interval) {
-          previousMillis = currentMillis;
+  while (numLedsOn > 0 && !stopRandomLEDs) {
+    unsigned long currentMillis = millis();
 
-          // Apaga un LED aleatorio
-          int ledIndex = random(numLedsOn);
-          strip.setPixelColor(ledIndex, strip.Color(0, 0, 0));
-          strip.show(); // Actualiza el estado del LED
+    if (currentMillis - previousMillis >= interval) {
+      previousMillis = currentMillis;
 
-          numLedsOn--;
-        }
-
-        // Verifica si se insertó una nueva ruta a través del puerto serie
-        if (Serial.available() > 0) {
-          String newData = Serial.readStringUntil('\n');
-          // Si se inserta una nueva ruta, abandona el bucle
-          if (newData != "") {
-            stopRandomLEDs = true;
-            break;
-          }
-        }
-      }
-    }
-    // Verifica si el valor recibido es igual a 104
-    if (data.toInt() == 104) {
-      // Apaga todos los LEDs en la matriz
-      strip.fill(strip.Color(0, 0, 0), 0, NUM_LEDS);
-      strip.show(); // Actualiza el estado de los LEDs
-
-      // Enciende un LED aleatorio en la matriz
-      ledX = random(12);
-      ledY = random(8);
-      int ledIndex = ledY * 12 + ledX;
-      strip.setPixelColor(ledIndex, strip.Color(255, 255, 255));
+      // Apaga un LED aleatorio
+      int ledIndex = random(numLedsOn);
+      strip.setPixelColor(ledIndex, strip.Color(0, 0, 0));
       strip.show(); // Actualiza el estado del LED
 
-      // Inicia el movimiento del LED
-      moveLED = true;
+      numLedsOn--;
+    }
 
-      while (moveLED) {
-        // Apaga el LED en la posición actual
-        int ledIndex = ledY * 12 + ledX;
-        strip.setPixelColor(ledIndex, strip.Color(0, 0, 0));
-
-        // Genera un movimiento aleatorio en las direcciones X y Y
-        int randomMovementX = random(-2, 3); // Genera un número aleatorio entre -2 y 2 para el movimiento en X
-        int randomMovementY = random(-2, 3); // Genera un número aleatorio entre -2 y 2 para el movimiento en Y
-
-        // Calcula la nueva posición del LED
-        int newLedX = ledX + randomMovementX;
-        int newLedY = ledY + randomMovementY;
-
-        // Verifica que la nueva posición esté dentro del rango válido de la matriz
-        if (newLedX >= 0 && newLedX < 12 && newLedY >= 0 && newLedY < 8) {
-          ledX = newLedX;
-          ledY = newLedY;
-        }
-
-        // Enciende el LED en la nueva posición
-        int newLedIndex = ledY * 12 + ledX;
-        strip.setPixelColor(newLedIndex, strip.Color(255, 255, 255));
-        strip.show(); // Actualiza el estado del LED
-
-        // Verifica si se insertó una nueva ruta a través del puerto serie
-        if (Serial.available() > 0) {
-          String newData = Serial.readStringUntil('\n');
-          // Si se inserta una nueva ruta, abandona el bucle
-          if (newData != "") {
-            stopMoveLED = true;
-            break;
-          }
-        }
-
-        delay(3000); // Retardo de medio segundo entre movimientos
-
-        // Verifica si se debe detener el movimiento del LED
-        if (stopMoveLED) {
-          break;
-        }
+    // Verifica si se insertó una nueva ruta a través del puerto serie
+    if (Serial.available() > 0) {
+      String newData = Serial.readStringUntil('\n');
+      // Si se inserta una nueva ruta, abandona el bucle
+      if (newData != "") {
+        stopRandomLEDs = true;
+        break;
       }
     }
   }
 }
 
+    // Verifica si el valor recibido es igual a 104
+if (data.toInt() == 104) {
+  // Reinicia la variable stopMoveLED a false
+  stopMoveLED = false;
+
+  // Apaga todos los LEDs en la matriz
+  strip.fill(strip.Color(0, 0, 0), 0, NUM_LEDS);
+  strip.show(); // Actualiza el estado de los LEDs
+
+  // Enciende un LED aleatorio en la matriz
+  ledX = random(12);
+  ledY = random(8);
+  int ledIndex = ledY * 12 + ledX;
+  strip.setPixelColor(ledIndex, strip.Color(255, 255, 255));
+  strip.show(); // Actualiza el estado del LED
+
+  // Inicia el movimiento del LED
+  moveLED = true;
+
+  while (moveLED) {
+    // Apaga el LED en la posición actual
+    int ledIndex = ledY * 12 + ledX;
+    strip.setPixelColor(ledIndex, strip.Color(0, 0, 0));
+
+    // Genera un movimiento aleatorio en las direcciones X y Y
+    int randomMovementX = random(-2, 3); // Genera un número aleatorio entre -2 y 2 para el movimiento en X
+    int randomMovementY = random(-2, 3); // Genera un número aleatorio entre -2 y 2 para el movimiento en Y
+
+    // Calcula la nueva posición del LED
+    int newLedX = ledX + randomMovementX;
+    int newLedY = ledY + randomMovementY;
+
+    // Verifica que la nueva posición esté dentro del rango válido de la matriz
+    if (newLedX >= 0 && newLedX < 12 && newLedY >= 0 && newLedY < 8) {
+      ledX = newLedX;
+      ledY = newLedY;
+    }
+
+    // Enciende el LED en la nueva posición
+    int newLedIndex = ledY * 12 + ledX;
+    strip.setPixelColor(newLedIndex, strip.Color(255, 255, 255));
+    strip.show(); // Actualiza el estado del LED
+
+    // Verifica si se insertó una nueva ruta a través del puerto serie
+    if (Serial.available() > 0) {
+      String newData = Serial.readStringUntil('\n');
+      // Si se inserta una nueva ruta, abandona el bucle
+      if (newData != "") {
+        stopMoveLED = true;
+        break;
+      }
+    }
+
+    delay(3000); // Retardo de medio segundo entre movimientos
+
+    // Verifica si se debe detener el movimiento del LED
+    if (stopMoveLED) {
+      break;
+    }
+  }
+}
+
+    // Verifica si el valor recibido es igual a 105
+    if (data.toInt() == 105) {
+      // Apaga todos los LEDs en la matriz
+      strip.fill(strip.Color(0, 0, 0), 0, NUM_LEDS);
+      strip.show(); // Actualiza el estado de los LEDs
+      if (Serial.available() > 0) {
+      String newData = Serial.readStringUntil('\n');
+      // Si se inserta una nueva ruta, abandona el bucle
+      if (newData != "") {
+        stopMoveLED = true;
+      }
+    }
+    }
+
+  }
+}

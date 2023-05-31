@@ -23,9 +23,13 @@
             <strong>Dificultad:</strong> Media
         </div>
         <div class="button-container">
-            <form action="mandar_arduino2.php" method="post">
+            <form action="mandar_arduino2.php" method="post"class="inline-form">
                 <input type="hidden" name="valor" value="103">
                 <input class="button" type="submit" value="Jugar">
+            </form>
+            <form action="mandar_arduino2.php" method="post"class="inline-form">
+                <input type="hidden" name="valor" value="105">
+                <input class="button" type="submit" value="Terminar">
             </form>
         </div>
     </div>
@@ -39,13 +43,17 @@
             prueba hasta sus límites.
             <br><br>
             <strong>Dificultad:</strong> Media
-        </div>
-        <div class="button-container">
-            <form action="mandar_arduino2.php" method="post">
-                <input type="hidden" name="valor" value="104">
-                <input class="button" type="submit" value="Jugar">
-            </form>
-        </div>
+        </div><div class="button-container">
+  <form action="mandar_arduino2.php" method="post" class="inline-form">
+    <input type="hidden" name="valor" value="104">
+    <input class="button" type="submit" value="Jugar">
+  </form>
+  <form action="mandar_arduino2.php" method="post" class="inline-form">
+    <input type="hidden" name="valor" value="105">
+    <input class="button" type="submit" value="Terminar">
+  </form>
+</div>
+
     </div>
 <br><br>
     <p>¿Tienes una idea para un emocionante minijuego? ¡Queremos escuchar tus sugerencias y convertirlas en realidad! Comparte tu propuesta y sé parte de la diversión.
