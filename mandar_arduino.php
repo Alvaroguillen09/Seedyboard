@@ -10,8 +10,8 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 // Obtener la ruta seleccionada y los LEDs correspondientes
 $ruta_seleccionada = $_POST['ruta'];
 
-// Abrir la conexión con el puerto COM6
-$puerto_serial = fopen("COM6", "w");
+// Abrir la conexión con el puerto COM4
+$puerto_serial = fopen("COM4", "w");
 
 // Enviar los LEDs correspondientes a Arduino
 fwrite($puerto_serial, $ruta_seleccionada);

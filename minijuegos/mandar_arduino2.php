@@ -11,8 +11,8 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 $minijuego = $_POST['valor'];
 
 
-// Abrir la conexión con el puerto COM6
-$puerto_serial = fopen("COM6", "w");
+// Abrir la conexión con el puerto COM4
+$puerto_serial = fopen("COM4", "w");
 
 // Enviar el valor 103 al puerto serial
 fwrite($puerto_serial, $minijuego);

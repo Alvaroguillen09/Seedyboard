@@ -4,8 +4,8 @@ session_start();
 $ruta_seleccionada = $_SESSION['ruta_seleccionada'];
 // Obtener el valor de los LEDs seleccionados
 $leds = $ruta_seleccionada;
-// Abrir la conexión con el puerto COM6
-$puerto_serial = fopen("COM6", "w");
+// Abrir la conexión con el puerto COM4
+$puerto_serial = fopen("COM4", "w");
 // Enviar los valores de los LEDs a Arduino
 fwrite($puerto_serial, $leds);
 
